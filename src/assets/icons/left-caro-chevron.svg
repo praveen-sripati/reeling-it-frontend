@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-left-caro-chevron">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="left-caro-chevron" clip-path="url(#clip-left-caro-chevron)">
+    <path id="Icon_material-chevron-left" data-name="Icon material-chevron-left" d="M23.115,11.115,21,9l-9,9,9,9,2.115-2.115L16.245,18Z" transform="translate(-5.557 -6)" fill="rgba(225,225,225,0.2)"/>
+  </g>
+</svg>

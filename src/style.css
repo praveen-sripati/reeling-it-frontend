@@ -1,0 +1,96 @@
+@tailwind base;
+@layer base {
+  h1 {
+    font-size: var(--h1-font-size);
+  }
+  h2 {
+    font-size: var(--h2-font-size);
+  }
+  h3 {
+    font-size: var(--h3-font-size);
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /*========== Colors ==========*/
+
+  /* HSL color mode */
+  --ps-first-color: #232926;
+  --ps-second-color: #838981;
+  --ps-third-color: #e1e1e1;
+  --ps-fourth-color: #408daf;
+  --ps-fifth-color: #0ac189;
+  --ps-sixth-color: #8dc1e7;
+
+  --ps-title-color: var(--ps-third-color);
+  --ps-text-color: var(--ps-third-color);
+  --ps-text-color-light: var(--ps-second-color);
+  --ps-input-color: hsl(var(--ps-hue-color), 70%, 96%);
+  --ps-body-color: #171d1a;
+  --ps-scroll-bar-color: hsl(var(--ps-hue-color), 12%, 90%);
+  --ps-scroll-thumb-color: var(--ps-first-color);
+
+  /*========== Font and typography ==========*/
+  --ps-body-font: 'Open Sans', sans-serif;
+  --ps-big-font-size: 2rem;
+  --ps-h1-font-size: 1.5rem;
+  --ps-h2-font-size: 1.25rem;
+  --ps-h3-font-size: 1.125rem;
+  --ps-normal-font-size: 0.938rem;
+  --ps-small-font-size: 0.813rem;
+  --ps-smaller-font-size: 0.75rem;
+}
+
+html.dark {
+  --ps-hue-color: 15;
+  /* HSL color mode */
+  --ps-first-color-second: hsl(var(--ps-hue-color), 15%, 9%);
+  --ps-title-color: hsl(var(--ps-hue-color), 8%, 95%);
+  --ps-text-color: hsl(var(--ps-hue-color), 8%, 75%);
+  --ps-input-color: hsl(var(--ps-hue-color), 29%, 16%);
+  --ps-body-color: hsl(var(--ps-hue-color), 10%, 5%);
+  --ps-container-color: hsl(var(--ps-hue-color), 40%, 20%);
+  --ps-scroll-bar-color: hsl(var(--ps-hue-color), 12%, 48%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  /* @apply bg-white dark:bg-ps-body-color text-black dark:bg-ps-text-color; */
+  font-family: var(--ps-body-font);
+  background-color: var(--ps-body-color);
+  color: var(--ps-text-color);
+  @apply tablet:m-0;
+}
+
+::-webkit-scrollbar {
+  @apply w-3 bg-ps-scroll-bar-color rounded-lg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-ps-scroll-thumb-color rounded-lg;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-ps-text-color-light;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--ps-title-color);
+  font-weight: 600;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
