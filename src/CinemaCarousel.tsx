@@ -9,17 +9,19 @@ import { EmptyState } from './EmptyState';
 
 import './CinemaCarousel.css';
 
+export type CinemaCarouselProps = {
+  sectionTitle: string;
+  isLoading?: boolean;
+  movies: Movie[];
+  classes?: string;
+};
+
 export const CinemaCarousel = ({
   sectionTitle,
   isLoading,
   movies,
   classes,
-}: {
-  sectionTitle: string;
-  isLoading?: boolean;
-  movies: Movie[];
-  classes?: string;
-}) => {
+}: CinemaCarouselProps) => {
   const containerRef = useRef<HTMLUListElement>(null);
 
   const handleRightMovementOfCarousel = () => {
@@ -90,7 +92,7 @@ export const CinemaCarousel = ({
                 <CinemaCard
                   movie={movie}
                   key={index}
-                  classes="mr-10 min-w-[160px] snap-start"
+                  classes="mr-10 min-w-[200px] snap-start"
                 />
               );
             })}

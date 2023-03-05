@@ -15,7 +15,7 @@ export const LandingSection = () => {
     useRealEventMovies(BASE_API_URL);
 
   return (
-    <>
+    <section className="py-10">
       <CinemaCarousel
         sectionTitle="This's Weeks Top Ten"
         isLoading={isWeeklyMoviesLoading}
@@ -33,6 +33,6 @@ export const LandingSection = () => {
         isLoading={isrealEventMoviesLoading}
         movies={realEventMovies}
       />
-    </>
+    </section>
   );
 };

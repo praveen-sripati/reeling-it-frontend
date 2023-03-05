@@ -1,8 +1,14 @@
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout';
 
 const App = () => {
-  return <Layout />;
+  // return <Layout />;
+  return (
+    <BrowserRouter>
+      <Layout />
+    </BrowserRouter>
+  );
 };
 
 const container = document.getElementById('root');
