@@ -3,7 +3,7 @@ import { ReactComponent as Logo } from './assets/icons/trailer-play.svg';
 export const Footer = ({ classes }: { classes?: string }) => {
   return (
     <footer className={`bg-ps-first-color py-10 ${classes}`}>
-      <section className="max-w-[1200px] m-auto">
+      <section className="max-w-[1280px] px-8 m-auto">
         <section className="flex mb-4">
           <section className="flex flex-col flex-1">
             <h3 className="text-ps-h3-font-size text-ps-text-color-light mb-2">

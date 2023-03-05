@@ -24,7 +24,7 @@ export const Navbar = () => {
       }`}
     >
       <nav>
-        <section className="flex items-center max-w-[1200px] m-auto">
+        <section className="flex items-center max-w-[1280px] px-8 m-auto">
           <div className="flex items-center mr-10 p-3 pl-0 cursor-pointer">
             <Logo className="inline mr-2" width={23} height={23} />
             <p className="text-ps-h1-font-size text-ps-title-color">
