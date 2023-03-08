@@ -20,12 +20,14 @@
 }
 
 .ps-nav-link:hover > span::before,
-.ps-nav-link:focus > span::before {
+.ps-nav-link:focus > span::before,
+.ps-nav-link.active > span::before {
   transform-origin: left bottom;
   transform: scaleX(1);
 }
 
 .ps-nav-link:hover,
-.ps-nav-link:focus {
+.ps-nav-link:focus,
+.ps-nav-link.active {
   color: var(--ps-fifth-color);
 }

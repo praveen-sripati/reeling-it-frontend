@@ -1,12 +1,13 @@
 import { useRef } from 'react';
-import { Movie } from './api-interfaces/landing-section';
 import { ReactComponent as ArrowForwardIcon } from './assets/icons/arrow-forward.svg';
 import { ReactComponent as LeftChevronIcon } from './assets/icons/left-caro-chevron.svg';
 import { ReactComponent as RightChevronIcon } from './assets/icons/right-caro-chevron.svg';
 import { ReactComponent as NoDataFoundSvg } from './assets/illustrations/no-data-v1.svg';
 import { CinemaCard } from './CinemaCard';
 import { EmptyState } from './EmptyState';
+import { Movie } from './global';
 
+import { CinemaCardSkeleton } from './CinemaCardSkeleton';
 import './CinemaCarousel.css';
 
 export type CinemaCarouselProps = {
@@ -71,13 +72,10 @@ export const CinemaCarousel = ({
           ref={containerRef}
           className="cinema-carousel-list flex snap-proximity snap-x overflow-scroll scroll-smooth p-2 scroll-p-2"
         >
-          {isLoading && (
-            <div className="h-[300px] w-full border border-white rounded-lg flex items-center justify-center">
-              <h1 className="text-ps-text-color text-ps-h1-font-size">
-                Loading...
-              </h1>
-            </div>
-          )}
+          {isLoading &&
+            [0, 0, 0, 0, 0].map((value, index) => (
+              <CinemaCardSkeleton classes="mr-10" key={index} />
+            ))}
           {!isLoading && movies.length === 0 && (
             <EmptyState>
               <NoDataFoundSvg className="mb-4" width={200} height={200} />

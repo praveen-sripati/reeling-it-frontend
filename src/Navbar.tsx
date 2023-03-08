@@ -1,7 +1,7 @@
 import './Navbar.css';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { ReactComponent as Logo } from './assets/icons/trailer-play.svg';
 
 export const Navbar = () => {
@@ -25,7 +25,7 @@ export const Navbar = () => {
     <header
       ref={element}
       className={`sticky top-0 z-10 transition-colors ${
-        isSticky ? 'bg-ps-first-color' : 'bg-transparent'
+        isSticky ? 'bg-ps-first-color shadow-lg' : 'bg-transparent'
       }`}
     >
       <nav>
@@ -44,17 +44,21 @@ export const Navbar = () => {
           </div>
           <ul className="flex">
             <li className="mr-6 p-4">
-              <Link to="/movies" className="ps-nav-link">
+              <NavLink to="/movies" className="ps-nav-link">
                 <span className="inline-block relative text-ellipsis overflow-hidden whitespace-nowrap max-w-full">
                   <span>Movies</span>
                 </span>
-              </Link>
+              </NavLink>
             </li>
             <li className="mr-6 p-4">
-              <Link to="/">Tv Shows</Link>
+              <NavLink to="/tvshows" className="ps-nav-link">
+                <span className="inline-block relative text-ellipsis overflow-hidden whitespace-nowrap max-w-full">
+                  <span>Tv Shows</span>
+                </span>
+              </NavLink>
             </li>
             <li className="mr-6 p-4">
-              <Link to="/">Actors</Link>
+              <NavLink to="/">Actors</NavLink>
             </li>
           </ul>
         </section>

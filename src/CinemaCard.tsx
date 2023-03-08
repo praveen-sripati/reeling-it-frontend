@@ -1,4 +1,4 @@
-import { Movie } from './api-interfaces/landing-section';
+import { Movie } from './global';
 
 export const CinemaCard = ({
   movie,

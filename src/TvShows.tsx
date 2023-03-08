@@ -5,7 +5,7 @@ import { CinemaCard } from './CinemaCard';
 import { CinemaCardSkeleton } from './CinemaCardSkeleton';
 import { EmptyState } from './EmptyState';
 import { BASE_API_URL, PaginationQueryParams } from './global';
-import { useMoviesWithPagination } from './hooks/useMoviesWithPagination';
+import { useTvShowsWithPagination } from './hooks/useTvShowsWithPagination';
 
 const { Search } = Input;
 
@@ -29,7 +29,7 @@ const handlePageSizeChange = (
   setPageSize(size);
 };
 
-const onSearchMovies = (
+const onSearchTvShows = (
   search: string,
   setSearch: Dispatch<React.SetStateAction<string>>,
   setPage: Dispatch<React.SetStateAction<number>>
@@ -41,11 +41,11 @@ const onSearchMovies = (
   setSearch(search);
 };
 
-export const Movies = () => {
+export const TvShows = () => {
   const [page, setPage] = useState<number>(1);
   const [pageSize, setPageSize] = useState<PaginationQueryParams['limit']>(10);
   const [search, setSearch] = useState<string>('');
-  const [movies, totalPages, isMoviesLoading] = useMoviesWithPagination(
+  const [tvShows, totalPages, isTvShowsLoading] = useTvShowsWithPagination(
     BASE_API_URL,
     {
       page,
@@ -58,20 +58,20 @@ export const Movies = () => {
     <section className="py-10">
       <div className="flex flex-col w-2/6 min-w-[16rem]">
         <Search
-          placeholder="Ex: Avatar"
+          placeholder="Ex: Breaking Bad"
           allowClear
-          onSearch={(search) => onSearchMovies(search, setSearch, setPage)}
-          loading={isMoviesLoading}
+          onSearch={(search) => onSearchTvShows(search, setSearch, setPage)}
+          loading={isTvShowsLoading}
         />
       </div>
       <ul className="flex flex-wrap -mx-5">
-        {isMoviesLoading &&
+        {isTvShowsLoading &&
           new Array(pageSize)
             .fill(0, 0, pageSize)
             .map((value, index) => (
               <CinemaCardSkeleton key={index} classes="m-6 w-[200px]" />
             ))}
-        {!isMoviesLoading && movies.length === 0 && (
+        {!isTvShowsLoading && tvShows.length === 0 && (
           <div className="m-5 w-full">
             <EmptyState>
               <NoDataFoundSvg className="mb-4" width={200} height={200} />
@@ -81,9 +81,9 @@ export const Movies = () => {
             </EmptyState>
           </div>
         )}
-        {!isMoviesLoading &&
-          movies.length > 0 &&
-          movies.map((movie, index) => {
+        {!isTvShowsLoading &&
+          tvShows.length > 0 &&
+          tvShows.map((movie, index) => {
             return (
               <CinemaCard key={index} movie={movie} classes="m-6 w-[200px]" />
             );

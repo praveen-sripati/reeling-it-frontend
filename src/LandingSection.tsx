@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Movie, MovieData } from './api-interfaces/landing-section';
+import { BASE_API_URL, Movie, MovieData } from './global';
 import { CinemaCarousel } from './CinemaCarousel';
 import { useRealEventMovies } from './hooks/useRealEventMovies';
 import { useTwentyTwoBestHits } from './hooks/useTwentyTwoBestHits';
 import { useWeeklyMovies } from './hooks/useWeeklyMovies';
-
-const BASE_API_URL = 'http://localhost:3000/api';
 
 export const LandingSection = () => {
   const [weeklyMovies, isWeeklyMoviesLoading] = useWeeklyMovies(BASE_API_URL);

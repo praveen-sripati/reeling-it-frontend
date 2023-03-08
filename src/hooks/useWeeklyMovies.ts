@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Movie, MovieData } from '../api-interfaces/landing-section';
+import { Movie, MovieData } from '../global';
 
 export const useWeeklyMovies = (baseUrl: string): [Movie[], boolean] => {
   const [weeklyMovies, setWeeklyMovies] = useState<Movie[]>([]);

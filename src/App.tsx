@@ -1,12 +1,16 @@
+import { ConfigProvider } from 'antd';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { antdTheme } from './antdTheme';
 import { Layout } from './Layout';
 
 const App = () => {
   // return <Layout />;
   return (
     <BrowserRouter>
-      <Layout />
+      <ConfigProvider theme={antdTheme}>
+        <Layout />
+      </ConfigProvider>
     </BrowserRouter>
   );
 };
