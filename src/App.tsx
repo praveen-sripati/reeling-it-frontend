@@ -5,7 +5,6 @@ import { antdTheme } from './antdTheme';
 import { Layout } from './Layout';
 
 const App = () => {
-  // return <Layout />;
   return (
     <BrowserRouter>
       <ConfigProvider theme={antdTheme}>

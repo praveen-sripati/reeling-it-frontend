@@ -9,6 +9,13 @@
   h3 {
     font-size: var(--h3-font-size);
   }
+  button,
+  [type='button'],
+  [type='reset'],
+  [type='submit'] {
+    -webkit-appearance: button;
+    background-color: var(--ps-fifth-color);
+  }
 }
 
 @tailwind components;

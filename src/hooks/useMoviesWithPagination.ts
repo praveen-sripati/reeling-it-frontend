@@ -7,14 +7,26 @@ import {
 
 export const useMoviesWithPagination = (
   baseUrl: string,
-  { page, limit, search }: PaginationQueryParams
+  {
+    page,
+    limit,
+    search,
+    genre,
+    dateRangeLowerYear,
+    dateRangeUpperYear,
+  }: PaginationQueryParams
 ): [
   MoviesWithPagination['movies'],
   MoviesWithPagination['total_pages'],
+  MoviesWithPagination['total_items'],
   boolean
 ] => {
   const [moviesWithPagination, setMoviesWithPagination] =
-    useState<MoviesWithPagination>({ movies: [], total_pages: 1 });
+    useState<MoviesWithPagination>({
+      movies: [],
+      total_pages: 1,
+      total_items: 1,
+    });
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
@@ -22,7 +34,7 @@ export const useMoviesWithPagination = (
       setIsLoading(true);
       try {
         const response = await fetch(
-          `${baseUrl}/movies?search=${search}&page=${page}&limit=${limit}`,
+          `${baseUrl}/movies?search=${search}&page=${page}&limit=${limit}&genre=${genre}&year_lower=${dateRangeLowerYear}&year_upper=${dateRangeUpperYear}`,
           {
             headers: {
               Authorization:
@@ -45,11 +57,20 @@ export const useMoviesWithPagination = (
     };
 
     void fetchMoviesWithPagination();
-  }, [baseUrl, page, limit, search]);
+  }, [
+    baseUrl,
+    page,
+    limit,
+    search,
+    genre,
+    dateRangeLowerYear,
+    dateRangeUpperYear,
+  ]);
 
   return [
     moviesWithPagination.movies,
     moviesWithPagination.total_pages,
+    moviesWithPagination.total_items,
     isLoading,
   ];
 };

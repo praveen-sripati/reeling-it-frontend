@@ -17,6 +17,7 @@ export type MovieData = {
 
 export type MoviesWithPagination = Movies & {
   total_pages: number;
+  total_items: number;
 };
 
 export type MovieDataWithPagination = {
@@ -53,4 +54,7 @@ export type PaginationQueryParams = {
   page: number;
   limit: 10 | 20 | 50;
   search: string;
+  genre: string;
+  dateRangeLowerYear: number;
+  dateRangeUpperYear: number;
 };

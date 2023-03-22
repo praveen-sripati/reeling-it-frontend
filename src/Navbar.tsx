@@ -1,7 +1,7 @@
 import './Navbar.css';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { ReactComponent as Logo } from './assets/icons/trailer-play.svg';
 
 export const Navbar = () => {
