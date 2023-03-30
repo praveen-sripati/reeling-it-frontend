@@ -2,6 +2,7 @@ export const BASE_API_URL = 'http://localhost:3000/api';
 
 // #region Movies types
 export type Movie = {
+  id: number;
   name: string;
   date: string;
   poster: string;
@@ -54,7 +55,7 @@ export type PaginationQueryParams = {
   page: number;
   limit: 10 | 20 | 50;
   search: string;
-  genre: string;
-  dateRangeLowerYear: number;
-  dateRangeUpperYear: number;
+  genre?: string;
+  dateRangeLowerYear?: number;
+  dateRangeUpperYear?: number;
 };

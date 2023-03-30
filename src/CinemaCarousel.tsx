@@ -72,7 +72,7 @@ export const CinemaCarousel = ({
           ref={containerRef}
           className="cinema-carousel-list flex snap-proximity snap-x overflow-scroll scroll-smooth p-2 scroll-p-2"
         >
-          {isLoading &&
+          {(isLoading || !movies) &&
             [0, 0, 0, 0, 0].map((value, index) => (
               <CinemaCardSkeleton classes="mr-10" key={index} />
             ))}

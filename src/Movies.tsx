@@ -148,13 +148,13 @@ export const Movies = () => {
           </div>
         </div>
         <ul className="flex flex-wrap -mx-5">
-          {isMoviesLoading &&
+          {(isMoviesLoading || !movies) &&
             new Array(pageSize)
               .fill(0, 0, pageSize)
               .map((value, index) => (
                 <CinemaCardSkeleton key={index} classes="m-6 w-[200px]" />
               ))}
-          {!isMoviesLoading && movies.length === 0 && (
+          {!isMoviesLoading && movies && movies.length === 0 && (
             <div className="m-5 w-full">
               <EmptyState>
                 <NoDataFoundSvg className="mb-4" width={200} height={200} />

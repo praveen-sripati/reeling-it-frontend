@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { Footer } from './Footer';
 import { LandingSection } from './LandingSection';
+import { MovieDetail } from './MovieDetail';
 import { Movies } from './Movies';
 import { Navbar } from './Navbar';
 import { TvShows } from './TvShows';
@@ -13,6 +14,7 @@ export const Layout = () => {
         <Routes>
           <Route path="/" element={<LandingSection />} />
           <Route path="/movies" element={<Movies />} />
+          <Route path="/movie/:movieId" element={<MovieDetail />} />
           <Route path="/tvshows" element={<TvShows />} />
         </Routes>
       </main>

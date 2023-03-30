@@ -9,5 +9,12 @@
     // "strict": true,
     "skipLibCheck": true
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.svg"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.svg",
+    "postcss.config.js",
+    "tailwind.config.js",
+    "vite.config.js"
+  ]
 }

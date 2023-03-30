@@ -56,13 +56,16 @@ export const TvShows = () => {
 
   return (
     <section className="py-10">
-      <div className="flex flex-col w-2/6 min-w-[16rem]">
-        <Search
-          placeholder="Ex: Breaking Bad"
-          allowClear
-          onSearch={(search) => onSearchTvShows(search, setSearch, setPage)}
-          loading={isTvShowsLoading}
-        />
+      <div className="flex justify-between mb-2">
+        <h2 className="text-ps-h2-font-size">All Movies</h2>
+        <div className="w-80">
+          <Search
+            placeholder="Ex: Breaking Bad"
+            allowClear
+            onSearch={(search) => onSearchTvShows(search, setSearch, setPage)}
+            loading={isTvShowsLoading}
+          />
+        </div>
       </div>
       <ul className="flex flex-wrap -mx-5">
         {isTvShowsLoading &&
